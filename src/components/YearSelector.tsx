@@ -21,8 +21,9 @@ export default function YearSelector({
   return (
     <div className="flex flex-wrap gap-3 items-center">
       <div className="flex items-center gap-2">
-        <label className="text-sm font-medium text-gray-600">사업연도</label>
+        <label htmlFor="year-select" className="text-sm font-medium text-gray-600">사업연도</label>
         <select
+          id="year-select"
           value={year}
           onChange={(e) => onYearChange(e.target.value)}
           className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -34,8 +35,9 @@ export default function YearSelector({
       </div>
 
       <div className="flex items-center gap-2">
-        <label className="text-sm font-medium text-gray-600">보고서</label>
+        <label htmlFor="report-select" className="text-sm font-medium text-gray-600">보고서</label>
         <select
+          id="report-select"
           value={reportCode}
           onChange={(e) => onReportCodeChange(e.target.value as ReportCode)}
           className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -47,7 +49,7 @@ export default function YearSelector({
       </div>
 
       <div className="flex items-center gap-2">
-        <label className="text-sm font-medium text-gray-600">재무제표</label>
+        <span className="text-sm font-medium text-gray-600">재무제표</span>
         <div className="flex rounded-lg overflow-hidden border border-gray-200 shadow-sm">
           {(['CFS', 'OFS'] as const).map((div) => (
             <button
